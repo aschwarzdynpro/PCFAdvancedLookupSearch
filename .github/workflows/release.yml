@@ -1,0 +1,46 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-package:
+    name: Build PCF and Package Dataverse Solution
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Build PCF control
+        run: npm run build
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore NuGet packages
+        run: dotnet restore solution/PCFAdvancedLookupSearchSolution.cdsproj
+
+      - name: Build Dataverse solution package
+        run: dotnet build solution/PCFAdvancedLookupSearchSolution.cdsproj --configuration Release --no-restore
+
+      - name: Upload solution to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: solution/bin/release/PCFAdvancedLookupSearch_managed.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

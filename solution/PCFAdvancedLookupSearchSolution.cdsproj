@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <ProjectGuid>{5A4F9E74-68F3-4B9A-8B0E-69A1C3E82E04}</ProjectGuid>
+    <OutputPath>$(MSBuildThisFileDirectory)bin\release</OutputPath>
+    <PackageType>Managed</PackageType>
+    <SolutionPackageType>Managed</SolutionPackageType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCFAdvancedLookupSearch.pcfproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.*" />
+  </ItemGroup>
+</Project>

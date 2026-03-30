@@ -6,10 +6,8 @@
     <OutputPath>$(MSBuildThisFileDirectory)bin\release</OutputPath>
     <PackageType>Managed</PackageType>
     <SolutionPackageType>Managed</SolutionPackageType>
-    <SolutionRootPath>src</SolutionRootPath>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkMoniker></TargetFrameworkMoniker>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\PCFAdvancedLookupSearch.pcfproj" />
@@ -17,5 +15,4 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.*" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

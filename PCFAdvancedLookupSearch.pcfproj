@@ -6,7 +6,6 @@
     <OutputPath>$(MSBuildThisFileDirectory)out\controls</OutputPath>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkMoniker></TargetFrameworkMoniker>
   </PropertyGroup>
   <ItemGroup>
     <None Include="*.png" Exclude="$(MSBuildThisFileDirectory)node_modules\**\*.png" />
@@ -15,5 +14,4 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.PowerApps.MSBuild.Pcf" Version="1.*" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,6 +22,17 @@ A Power Apps Component Framework (PCF) field control that provides a sophisticat
 | `placeholderText` | `SingleLine.Text` | | `Search...` | Placeholder shown in the search input |
 | `maxResults` | `Whole.None` | | `10` | Maximum number of records returned per search (max 100) |
 
+## Installation (Dataverse Solution)
+
+A pre-built managed Dataverse solution is attached to every [GitHub Release](../../releases) as `PCFAdvancedLookupSearch_managed.zip`. To install it:
+
+1. Go to the [Releases page](../../releases) and download `PCFAdvancedLookupSearch_managed.zip` from the latest release.
+2. Open [make.powerapps.com](https://make.powerapps.com) and select your target environment.
+3. Navigate to **Solutions** in the left-hand menu.
+4. Click **Import solution** and select the downloaded `.zip` file.
+5. Follow the import wizard and click **Import** to complete the installation.
+6. After the import finishes, the **Advanced Lookup Search** control will be available to add to lookup columns on model-driven app forms.
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) ≥ 18

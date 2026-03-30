@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install Node.js dependencies
@@ -32,11 +32,21 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore NuGet packages
-        run: dotnet restore solution/PCFAdvancedLookupSearchSolution.cdsproj
+      - name: Install Power Platform CLI
+        run: dotnet tool install --global Microsoft.PowerApps.CLI.Tool
 
-      - name: Build Dataverse solution package
-        run: dotnet build solution/PCFAdvancedLookupSearchSolution.cdsproj --configuration Release --no-restore
+      - name: Stage PCF control output into solution source
+        run: |
+          mkdir -p solution/src/Controls/AdvancedLookup.AdvancedLookupSearch
+          cp -r out/controls/* solution/src/Controls/AdvancedLookup.AdvancedLookupSearch/
+
+      - name: Package Dataverse solution
+        run: |
+          mkdir -p solution/bin/release
+          pac solution pack \
+            --zipfile solution/bin/release/PCFAdvancedLookupSearch_managed.zip \
+            --folder solution/src \
+            --packagetype Managed
 
       - name: Upload solution to release
         uses: softprops/action-gh-release@v2

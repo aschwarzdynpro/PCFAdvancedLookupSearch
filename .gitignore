@@ -4,6 +4,14 @@ node_modules/
 # Build output
 out/
 
+# MSBuild intermediate output
+obj/
+solution/obj/
+solution/bin/
+
+# CI-generated PCF control output staging (created at build time)
+solution/src/Controls/
+
 # PCF generated types (regenerated on build)
 generated/
 

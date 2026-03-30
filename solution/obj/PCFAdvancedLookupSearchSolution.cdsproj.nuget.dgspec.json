@@ -1,0 +1,96 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/solution/PCFAdvancedLookupSearchSolution.cdsproj": {}
+  },
+  "projects": {
+    "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch.pcfproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch.pcfproj",
+        "projectName": "PCFAdvancedLookupSearch",
+        "projectPath": "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch.pcfproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "/home/runner/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net40"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net40": {
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net40": {
+          "dependencies": {
+            "Microsoft.PowerApps.MSBuild.Pcf": {
+              "target": "Package",
+              "version": "[1.*, )"
+            }
+          }
+        }
+      }
+    },
+    "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/solution/PCFAdvancedLookupSearchSolution.cdsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/solution/PCFAdvancedLookupSearchSolution.cdsproj",
+        "projectName": "PCFAdvancedLookupSearchSolution",
+        "projectPath": "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/solution/PCFAdvancedLookupSearchSolution.cdsproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/solution/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "/home/runner/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net40"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net40": {
+            "projectReferences": {
+              "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch.pcfproj": {
+                "projectPath": "/home/runner/work/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch/PCFAdvancedLookupSearch.pcfproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net40": {
+          "dependencies": {
+            "Microsoft.PowerApps.MSBuild.Solution": {
+              "target": "Package",
+              "version": "[1.*, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

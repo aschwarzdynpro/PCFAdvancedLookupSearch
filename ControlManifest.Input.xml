@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="AdvancedLookup"
+           constructor="AdvancedLookupSearch"
+           version="0.0.1"
+           display-name-key="AdvancedLookupSearch_Display_Key"
+           description-key="AdvancedLookupSearch_Desc_Key"
+           control-type="standard">
+
+    <external-service-usage enabled="false"></external-service-usage>
+
+    <!-- The Dataverse lookup field this control is bound to -->
+    <property name="lookupField"
+              display-name-key="Lookup_Field_Display_Key"
+              description-key="Lookup_Field_Desc_Key"
+              of-type="Lookup.Simple"
+              usage="bound"
+              required="true" />
+
+    <!-- Semicolon-separated list of columns to search in (e.g. "fullname;emailaddress1;telephone1") -->
+    <property name="searchColumns"
+              display-name-key="Search_Columns_Display_Key"
+              description-key="Search_Columns_Desc_Key"
+              of-type-group="strings"
+              usage="input"
+              required="true"
+              default-value="name" />
+
+    <!-- Semicolon-separated list of columns to show in each result row.
+         Falls back to searchColumns when left empty. -->
+    <property name="displayColumns"
+              display-name-key="Display_Columns_Display_Key"
+              description-key="Display_Columns_Desc_Key"
+              of-type-group="strings"
+              usage="input"
+              required="false"
+              default-value="" />
+
+    <!-- Placeholder text shown inside the search input -->
+    <property name="placeholderText"
+              display-name-key="Placeholder_Text_Display_Key"
+              description-key="Placeholder_Text_Desc_Key"
+              of-type-group="strings"
+              usage="input"
+              required="false"
+              default-value="Search..." />
+
+    <!-- Maximum number of records returned per search -->
+    <property name="maxResults"
+              display-name-key="Max_Results_Display_Key"
+              description-key="Max_Results_Desc_Key"
+              of-type="Whole.None"
+              usage="input"
+              required="false"
+              default-value="10" />
+
+    <type-group name="strings">
+      <type>SingleLine.Text</type>
+      <type>SingleLine.TextArea</type>
+      <type>SingleLine.Email</type>
+      <type>SingleLine.URL</type>
+      <type>SingleLine.Ticker</type>
+      <type>SingleLine.Phone</type>
+    </type-group>
+
+    <resources>
+      <code path="index.ts" order="1" />
+    </resources>
+
+    <feature-usage>
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+
+  </control>
+</manifest>
